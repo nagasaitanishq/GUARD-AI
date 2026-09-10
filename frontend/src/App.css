@@ -1,0 +1,2241 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #f4f7ff;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #69758a;
+  --line: #e7ebf3;
+
+  --primary: #5b5bf7;
+  --primary2: #7c3aed;
+  --cyan: #06b6d4;
+  --blue: #2563eb;
+  --pink: #ec4899;
+
+  --high: #ef4444;
+  --high-soft: #fff1f2;
+  --medium: #f59e0b;
+  --medium-soft: #fffbeb;
+  --low: #10b981;
+  --low-soft: #ecfdf5;
+
+  --sidebar: #11152b;
+  --sidebar2: #1b2050;
+
+  --shadow: 0 12px 35px rgba(40, 48, 100, .09);
+  --shadow-lg: 0 25px 70px rgba(37, 41, 100, .16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(91,91,247,.10), transparent 28%),
+    radial-gradient(circle at 90% 5%, rgba(6,182,212,.08), transparent 25%),
+    var(--bg);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(circle at 70% 0%, rgba(124,58,237,.05), transparent 30%),
+    var(--bg);
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 255px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(124,58,237,.45), transparent 28%),
+    linear-gradient(180deg, #171b3b 0%, #0d1125 100%);
+  box-shadow: 8px 0 35px rgba(16, 18, 50, .12);
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 10px 28px;
+}
+
+.brand-icon,
+.upload-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 21px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  box-shadow: 0 8px 25px rgba(124,58,237,.35);
+}
+
+.brand strong {
+  display: block;
+  font-size: 16px;
+}
+
+.brand span {
+  display: block;
+  margin-top: 3px;
+  color: #aeb5d3;
+  font-size: 11px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 7px;
+}
+
+.nav-item {
+  border: 0;
+  padding: 13px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b9c0dd;
+  background: transparent;
+  text-align: left;
+  font-weight: 600;
+  transition: .2s ease;
+}
+
+.nav-item span {
+  width: 22px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.nav-item:hover {
+  color: white;
+  background: rgba(255,255,255,.08);
+  transform: translateX(2px);
+}
+
+.nav-item.active {
+  color: white;
+  background: linear-gradient(135deg, rgba(99,102,241,.95), rgba(168,85,247,.9));
+  box-shadow: 0 8px 25px rgba(99,102,241,.28);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255,255,255,.045);
+}
+
+.sidebar-footer strong,
+.sidebar-footer span {
+  display: block;
+}
+
+.sidebar-footer strong {
+  font-size: 11px;
+}
+
+.sidebar-footer span {
+  margin-top: 3px;
+  color: #929aba;
+  font-size: 9px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 5px rgba(34,197,94,.12), 0 0 15px rgba(34,197,94,.7);
+}
+
+/* MAIN */
+
+.main {
+  width: calc(100% - 255px);
+  margin-left: 255px;
+  padding: 28px 34px 40px;
+}
+
+.topbar {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 27px;
+  letter-spacing: -.7px;
+}
+
+.topbar p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.refresh-button,
+.secondary-button {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 10px 15px;
+  color: var(--text);
+  background: white;
+  font-weight: 700;
+  box-shadow: 0 5px 16px rgba(20,30,70,.06);
+  transition: .2s ease;
+}
+
+.refresh-button:hover,
+.secondary-button:hover {
+  border-color: #c9cdfc;
+  transform: translateY(-1px);
+}
+
+/* CARDS */
+
+.panel,
+.stat-card {
+  border: 1px solid rgba(220,225,240,.85);
+  border-radius: 20px;
+  background: rgba(255,255,255,.96);
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  margin-bottom: 22px;
+  padding: 24px;
+  scroll-margin-top: 25px;
+}
+
+.panel-header {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: -.25px;
+}
+
+.panel-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* STATS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  min-height: 110px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(99,102,241,.07);
+}
+
+.stat-card.high {
+  background: linear-gradient(135deg, #fff, #fff7f8);
+}
+
+.stat-card.medium {
+  background: linear-gradient(135deg, #fff, #fffaf0);
+}
+
+.stat-card.low {
+  background: linear-gradient(135deg, #fff, #f4fffb);
+}
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.stat-icon.blue {
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+.stat-icon.red {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.stat-icon.orange {
+  color: #d97706;
+  background: #fef3c7;
+}
+
+.stat-icon.green {
+  color: #059669;
+  background: #d1fae5;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.stat-card strong {
+  font-size: 25px;
+}
+
+/* UPLOAD */
+
+.upload-panel {
+  background:
+    linear-gradient(135deg, rgba(91,91,247,.045), rgba(236,72,153,.035)),
+    white;
+}
+
+.upload-area {
+  min-height: 92px;
+  padding: 17px 20px;
+  border: 2px dashed #cfd5ef;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fafbff;
+  transition: .2s ease;
+}
+
+.upload-area:hover,
+.upload-area.drag-active {
+  border-color: var(--primary);
+  background: #f5f5ff;
+  box-shadow: inset 0 0 0 1px rgba(91,91,247,.08);
+}
+
+.upload-area strong,
+.upload-area span {
+  display: block;
+}
+
+.upload-area strong {
+  font-size: 13px;
+}
+
+.upload-area span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.selected-file {
+  margin-top: 12px;
+  padding: 11px 14px;
+  border: 1px solid #dfe3f2;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: #f8f9ff;
+}
+
+.selected-file strong {
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.selected-file span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.selected-file button,
+.upload-button {
+  border: 0;
+  border-radius: 11px;
+  padding: 11px 18px;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(99,102,241,.22);
+  transition: .2s ease;
+}
+
+.upload-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(99,102,241,.30);
+}
+
+.upload-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.upload-success,
+.upload-error {
+  margin-top: 12px;
+  padding: 11px 14px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.upload-success {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.upload-error {
+  color: #b91c1c;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+
+/* CHARTS */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.chart-container,
+.financial-panel {
+  min-height: 400px;
+}
+
+.pie-wrapper {
+  height: 255px;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.legend-item {
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #fafbfe;
+  font-size: 10px;
+}
+
+.legend-item strong {
+  margin-left: auto;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.money-card {
+  padding: 17px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fafbff, #f7f8ff);
+}
+
+.money-card span,
+.money-card strong {
+  display: block;
+}
+
+.money-card span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.money-card strong {
+  margin-top: 7px;
+  font-size: 22px;
+}
+
+.utilization {
+  margin-top: 65px;
+}
+
+.utilization-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.utilization-header strong {
+  color: var(--primary);
+  font-size: 15px;
+}
+
+.progress {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e9edf6;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+}
+
+/* RISK SCORE */
+
+.risk-score-panel {
+  min-height: 390px;
+}
+
+.risk-chart {
+  height: 315px;
+}
+
+/* FILTERS */
+
+.filter-group {
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #f0f2f8;
+}
+
+.filter {
+  border: 0;
+  border-radius: 7px;
+  padding: 7px 11px;
+  color: #667085;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.filter:hover {
+  color: var(--primary);
+}
+
+.filter.active {
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 5px 14px rgba(99,102,241,.25);
+}
+
+/* TABLE */
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+thead {
+  background: #f7f8fc;
+}
+
+th {
+  padding: 13px;
+  color: #718096;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: 9px;
+  letter-spacing: .45px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #edf0f5;
+  color: #566176;
+  font-size: 11px;
+}
+
+tbody tr {
+  transition: .15s ease;
+}
+
+tbody tr:hover {
+  background: #fafaff;
+}
+
+.project-name strong,
+.project-name span {
+  display: block;
+}
+
+.project-name strong {
+  color: #315de7;
+  font-size: 11px;
+}
+
+.project-name span {
+  margin-top: 5px;
+  color: #8a93a6;
+  font-size: 9px;
+}
+
+td small {
+  color: #8790a3;
+  font-size: 9px;
+}
+
+.danger-text {
+  color: #dc2626;
+}
+
+.warning-text {
+  color: #d97706;
+}
+
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 62px;
+  padding: 8px 10px;
+  border-radius: 99px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.risk-badge.high {
+  color: #dc2626;
+  background: #fff1f2;
+  border: 1px solid #fecaca;
+}
+
+.risk-badge.medium {
+  color: #d97706;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.risk-badge.low {
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.view-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 7px 11px;
+  color: #4f46e5;
+  background: #eef2ff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.view-button:hover {
+  background: #e0e7ff;
+}
+
+.score-cell {
+  min-width: 65px;
+}
+
+.score-cell strong {
+  font-size: 12px;
+}
+
+.mini-score {
+  width: 55px;
+  height: 4px;
+  margin-top: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #edf0f5;
+}
+
+.mini-score span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.empty-state {
+  padding: 45px !important;
+  text-align: center;
+  color: #8a93a6;
+}
+
+/* ANOMALY SUMMARY */
+
+.anomaly-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.anomaly-count {
+  padding: 18px;
+  border-radius: 15px;
+  border: 1px solid var(--line);
+}
+
+.anomaly-count strong,
+.anomaly-count span {
+  display: block;
+}
+
+.anomaly-count strong {
+  font-size: 25px;
+}
+
+.anomaly-count span {
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.anomaly-count.high {
+  background: linear-gradient(135deg, #fff1f2, #fff);
+}
+
+.anomaly-count.medium {
+  background: linear-gradient(135deg, #fffbeb, #fff);
+}
+
+.anomaly-count.low {
+  background: linear-gradient(135deg, #ecfdf5, #fff);
+}
+
+/* VERIFICATION */
+
+.verification-list {
+  display: grid;
+  gap: 10px;
+}
+
+.verification-row {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: #fafbff;
+}
+
+.verification-row strong,
+.verification-row span {
+  display: block;
+}
+
+.verification-row strong {
+  font-size: 12px;
+}
+
+.verification-row span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.verification-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 13px;
+  color: white;
+  background: linear-gradient(135deg, #ef4444, #ec4899);
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(239,68,68,.18);
+}
+
+.verification-status {
+  padding: 7px 10px;
+  border-radius: 9px;
+  color: #047857 !important;
+  background: #ecfdf5;
+  font-weight: 800;
+}
+
+.empty-verification {
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed #d7dbea;
+  border-radius: 13px;
+}
+
+/* MODAL */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  background: rgba(12,16,38,.62);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.modal {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 22px;
+  background: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 10px;
+  color: #657086;
+  background: #f1f3f8;
+  font-size: 22px;
+}
+
+.modal-title span {
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.modal-title h2 {
+  margin: 7px 0 4px;
+  font-size: 21px;
+}
+
+.modal-title p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.risk-summary {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f5f5ff, #fff5fb);
+}
+
+.risk-summary span:first-child {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.risk-summary strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 28px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.detail-grid > div {
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fafbfe;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #8992a5;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.detail-grid strong {
+  font-size: 11px;
+}
+
+.explanation {
+  margin-top: 17px;
+  padding: 17px;
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  background: #f7f7ff;
+}
+
+.explanation h3 {
+  margin: 0 0 9px;
+  font-size: 13px;
+}
+
+.explanation ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.explanation li {
+  margin: 6px 0;
+  color: #566176;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.modal-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+/* UPLOAD SCREEN */
+
+.loading,
+.upload-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 25px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99,102,241,.18), transparent 30%),
+    radial-gradient(circle at 85% 10%, rgba(236,72,153,.14), transparent 28%),
+    linear-gradient(135deg, #f6f7ff, #eefcff);
+}
+
+.loading-card,
+.upload-card {
+  width: min(620px, 100%);
+  padding: 40px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 28px;
+  background: rgba(255,255,255,.9);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+}
+
+.upload-logo {
+  margin: 0 auto 15px;
+  width: 62px;
+  height: 62px;
+  font-size: 27px;
+  border-radius: 19px;
+}
+
+.upload-card h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.upload-card h2 {
+  margin: 8px 0 0;
+  font-size: 16px;
+}
+
+.upload-description {
+  max-width: 480px;
+  margin: 10px auto 25px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.upload-box {
+  padding: 30px 20px;
+  border: 2px dashed #cbd1f4;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fafaff, #fbf8ff);
+  transition: .2s ease;
+}
+
+.upload-box:hover,
+.upload-box.drag-active {
+  border-color: var(--primary);
+  background: #f5f3ff;
+  transform: translateY(-2px);
+}
+
+.upload-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 12px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.upload-box h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.upload-box p {
+  margin: 7px 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.upload-box p span {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.upload-box small {
+  color: #8b94a8;
+  font-size: 9px;
+}
+
+.upload-note,
+.upload-disclaimer {
+  color: #8a93a6;
+  font-size: 9px;
+}
+
+.upload-disclaimer {
+  margin-top: 7px;
+}
+
+.demo-divider {
+  margin: 20px 0 10px;
+  color: #9aa2b5;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.demo-loader {
+  display: none;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+  border: 3px solid #e7e9ff;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+footer {
+  padding: 10px 0 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #8b94a8;
+  font-size: 9px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 215px;
+  }
+
+  .main {
+    width: calc(100% - 215px);
+    margin-left: 215px;
+    padding: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .sidebar nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar-footer {
+    margin-top: 15px;
+  }
+
+  .main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .anomaly-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .main {
+    padding: 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .panel-header {
+    flex-direction: column;
+  }
+
+  .legend {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-card {
+    padding: 25px 17px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-area {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+/* =====================================================
+   FINAL UI CONTRAST + VISUAL POLISH
+   ===================================================== */
+
+.panel-header h2,
+.panel h2,
+.chart-container h2,
+.financial-panel h2,
+.risk-score-panel h2,
+.anomaly-summary h2,
+.verification-panel h2 {
+  color: #172033 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-weight: 800;
+  letter-spacing: -0.35px;
+}
+
+.panel-header p {
+  color: #69758a !important;
+  opacity: 1 !important;
+}
+
+/* Section title accent */
+.panel-header h2 {
+  position: relative;
+  padding-left: 12px;
+}
+
+.panel-header h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 4px;
+  height: calc(100% - 6px);
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    #6366f1,
+    #a855f7,
+    #ec4899
+  );
+}
+
+/* Better panel appearance */
+.panel {
+  background: rgba(255,255,255,.98);
+  border: 1px solid #e4e8f3;
+  box-shadow:
+    0 10px 30px rgba(42, 48, 95, .07),
+    0 2px 5px rgba(42, 48, 95, .03);
+}
+
+/* Risk Distribution */
+.chart-container {
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(99,102,241,.07),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+/* Fund Overview */
+.financial-panel {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(6,182,212,.08),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+/* Money cards */
+.money-card {
+  border: 1px solid #e4e8f3;
+  background:
+    linear-gradient(
+      135deg,
+      #fafbff 0%,
+      #f6f7ff 100%
+    );
+  transition: .2s ease;
+}
+
+.money-card:hover {
+  transform: translateY(-2px);
+  border-color: #cdd2ff;
+  box-shadow: 0 8px 22px rgba(91,91,247,.10);
+}
+
+.money-card strong {
+  color: #172033;
+}
+
+/* Risk legend cards */
+.legend-item {
+  background: #fbfcff;
+  transition: .2s ease;
+}
+
+.legend-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(30,40,80,.07);
+}
+
+/* Better risk score panel */
+.risk-score-panel {
+  background:
+    radial-gradient(
+      circle at 95% 0%,
+      rgba(168,85,247,.07),
+      transparent 30%
+    ),
+    #ffffff;
+}
+
+/* Verification panel */
+.verification-panel {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(236,72,153,.06),
+      transparent 30%
+    ),
+    #ffffff;
+}
+
+/* Anomaly summary */
+.anomaly-summary {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(99,102,241,.06),
+      transparent 30%
+    ),
+    #ffffff;
+}
+
+/* Better empty state */
+.meaningful-empty,
+.empty-verification {
+  color: #69758a;
+  background:
+    linear-gradient(
+      135deg,
+      #fafbff,
+      #f9f7ff
+    );
+}
+
+.meaningful-empty h3,
+.empty-verification strong {
+  color: #172033;
+}
+
+/* Remove accidental text-selection look */
+.panel-header h2 {
+  user-select: none;
+}
+
+/* =====================================================
+   FINAL MICRO-INTERACTIONS + SMOOTH TRANSITIONS
+   Keeps the existing design and functionality unchanged.
+   ===================================================== */
+
+/* Global interactive feel */
+button,
+.nav-item,
+.panel,
+.stat-card,
+.money-card,
+.legend-item,
+.anomaly-count,
+.verification-row,
+.view-button,
+.risk-badge,
+.upload-area,
+.upload-box,
+.selected-file,
+.detail-grid > div,
+.explanation {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Sidebar navigation */
+.nav-item {
+  transition:
+    transform .22s ease,
+    background-color .22s ease,
+    color .22s ease,
+    box-shadow .22s ease;
+}
+
+.nav-item:hover {
+  transform: translateX(4px);
+}
+
+.nav-item.active {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background .22s ease;
+}
+
+/* Brand icon subtle hover */
+.brand-icon,
+.upload-logo {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.brand-icon:hover,
+.upload-logo:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(124,58,237,.42);
+}
+
+/* Dashboard/stat cards */
+.stat-card {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 34px rgba(40,48,100,.12),
+    0 3px 8px rgba(40,48,100,.04);
+}
+
+/* Panels stay subtle — no large movement */
+.panel {
+  transition:
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.panel:hover {
+  border-color: #dce1f0;
+  box-shadow:
+    0 14px 36px rgba(42,48,95,.085),
+    0 3px 8px rgba(42,48,95,.035);
+}
+
+/* Buttons */
+.refresh-button,
+.secondary-button,
+.view-button,
+.verification-button,
+.upload-button,
+.selected-file button,
+.close-button,
+.filter {
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background-color .18s ease,
+    border-color .18s ease,
+    color .18s ease;
+}
+
+.refresh-button:hover,
+.secondary-button:hover,
+.view-button:hover {
+  transform: translateY(-2px);
+}
+
+.refresh-button:active,
+.secondary-button:active,
+.view-button:active,
+.verification-button:active,
+.upload-button:active,
+.selected-file button:active {
+  transform: translateY(0) scale(.98);
+}
+
+/* Risk filter buttons */
+.filter:hover {
+  transform: translateY(-1px);
+}
+
+.filter.active {
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.filter.active:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(99,102,241,.30);
+}
+
+/* Money cards */
+.money-card {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.money-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Risk legend */
+.legend-item {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background-color .22s ease;
+}
+
+.legend-item:hover {
+  transform: translateY(-3px);
+  border-color: #d9def0;
+}
+
+/* Anomaly summary cards */
+.anomaly-count {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.anomaly-count:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(30,40,80,.08);
+}
+
+/* Table rows */
+tbody tr {
+  transition:
+    background-color .18s ease,
+    transform .18s ease;
+}
+
+tbody tr:hover {
+  transform: translateX(2px);
+}
+
+/* Risk badges */
+.risk-badge {
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.risk-badge:hover {
+  transform: scale(1.04);
+}
+
+/* Verification rows */
+.verification-row {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background-color .2s ease;
+}
+
+.verification-row:hover {
+  transform: translateY(-2px);
+  border-color: #d9def0;
+  box-shadow: 0 8px 20px rgba(30,40,80,.07);
+}
+
+/* Upload areas */
+.upload-area,
+.upload-box {
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    background-color .22s ease,
+    box-shadow .22s ease;
+}
+
+.upload-area:hover,
+.upload-box:hover {
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.modal {
+  animation: modalEnter .24s ease-out;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-backdrop {
+  animation: backdropEnter .2s ease-out;
+}
+
+@keyframes backdropEnter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.close-button:hover {
+  transform: rotate(2deg) scale(1.04);
+  color: #172033;
+  background: #e9ecf5;
+}
+
+/* Project detail cards */
+.detail-grid > div {
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.detail-grid > div:hover {
+  transform: translateY(-2px);
+  border-color: #d7ddef;
+  box-shadow: 0 6px 16px rgba(30,40,80,.055);
+}
+
+/* Explanation box */
+.explanation {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.explanation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(91,91,247,.07);
+}
+
+/* Progress bar animation */
+.progress-fill {
+  animation: progressReveal .8s ease-out;
+}
+
+@keyframes progressReveal {
+  from {
+    width: 0;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================================================
+   EXTRA FINAL UI EFFECTS
+   - Prevent accidental text-selection highlight on UI labels
+   - Add subtle premium hover/focus effects
+   - Keep normal text selectable where useful
+   ===================================================== */
+
+/* Prevent accidental blue selection on dashboard UI labels/headings */
+.panel-header h2,
+.panel-header p,
+.stat-label,
+.stat-card strong,
+.risk-badge,
+.legend-item,
+.anomaly-count,
+.verification-row,
+.verification-status,
+.modal-title,
+.modal-title span,
+.modal-title h2,
+.modal-title p,
+.risk-summary,
+.risk-summary span,
+.risk-summary strong,
+.modal-label,
+.detail-grid strong,
+.explanation h3,
+.explanation li,
+.risk-insights-polished,
+.risk-primary-polished,
+.risk-primary-label-polished,
+.risk-primary-title-polished,
+.risk-primary-sub-polished,
+.budget-status-polished,
+.financial-polished,
+.financial-card-polished,
+.financial-impact-polished,
+.polished-section-title,
+.risk-cause-polished,
+.ai-polished,
+.recommendation-polished,
+.cause-content-polished,
+.ai-content-polished,
+.recommendation-list-polished {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Keep inputs and anything the user may want to copy/edit selectable */
+input,
+textarea,
+select,
+pre,
+code {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* Premium button hover glow */
+.upload-button:hover:not(:disabled),
+.verification-button:hover,
+.selected-file button:hover,
+.refresh-button:hover,
+.secondary-button:hover {
+  filter: brightness(1.03);
+}
+
+/* Soft focus ring for keyboard navigation */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(99,102,241,.22);
+  outline-offset: 2px;
+}
+
+/* Give the main risk panel a subtle animated accent */
+.risk-score-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.risk-score-panel::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168,85,247,.10),
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+/* Risk summary gets a polished hover */
+.risk-summary {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+  border: 1px solid transparent;
+}
+
+.risk-summary:hover {
+  transform: translateY(-2px);
+  border-color: #dddff5;
+  box-shadow: 0 9px 24px rgba(80,70,160,.08);
+}
+
+/* Primary risk card */
+.risk-primary-polished {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.risk-primary-polished:hover {
+  transform: translateY(-2px);
+  border-color: #d8dcf0;
+  box-shadow: 0 10px 25px rgba(60,65,120,.08);
+}
+
+/* Financial cards */
+.financial-card-polished {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.financial-card-polished:hover {
+  transform: translateY(-3px);
+  border-color: #cfe5da;
+  box-shadow: 0 8px 20px rgba(16,185,129,.08);
+}
+
+/* Risk cause / AI / recommendation cards */
+.risk-cause-polished,
+.ai-polished,
+.recommendation-polished {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.risk-cause-polished:hover,
+.ai-polished:hover,
+.recommendation-polished:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(30,40,80,.065);
+}
+
+/* Icon micro-interaction */
+.cause-icon-polished,
+.ai-icon-polished,
+.recommendation-icon-polished,
+.polished-section-icon {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.risk-cause-polished:hover .cause-icon-polished,
+.ai-polished:hover .ai-icon-polished,
+.recommendation-polished:hover .recommendation-icon-polished {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+/* Modal action buttons feel more responsive */
+.modal-actions button {
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease;
+}
+
+.modal-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.modal-actions button:active {
+  transform: translateY(0) scale(.98);
+}
+
+/* Verification button subtle pulse only on hover */
+.verification-button:hover {
+  box-shadow:
+    0 8px 20px rgba(239,68,68,.24),
+    0 0 0 4px rgba(236,72,153,.07);
+}
+
+/* Scrollbar polish for long modal */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: #f5f6fa;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: #cdd2e3;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: #aeb5cf;
+}
+
+/* Sidebar active item gets a tiny highlight sweep */
+.nav-item.active {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.14),
+    transparent
+  );
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+
+.nav-item.active:hover::after {
+  animation: navShine .65s ease;
+}
+
+@keyframes navShine {
+  from {
+    left: -70%;
+  }
+
+  to {
+    left: 130%;
+  }
+}
+
+/* Slight entrance for dashboard panels */
+.panel {
+  animation: panelEnter .35s ease both;
+}
+
+@keyframes panelEnter {
+  from {
+    opacity: .94;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Don't animate continuously on reduced-motion devices */
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .modal,
+  .modal-backdrop {
+    animation: none !important;
+  }
+
+  .nav-item.active:hover::after {
+    animation: none !important;
+  }
+}
+
+/* =====================================================
+   FINAL PREMIUM MODAL / ASSESSMENT POLISH
+   ===================================================== */
+
+/* Make the selected project's name clearly visible */
+.modal-title {
+  position: relative;
+  padding: 4px 42px 16px 2px;
+  color: #172033 !important;
+}
+
+.modal-title h2,
+.modal-title h2 strong {
+  color: #172033 !important;
+  font-weight: 850 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  transition:
+    transform .22s ease,
+    letter-spacing .22s ease,
+    text-shadow .22s ease;
+}
+
+.modal-title h2 {
+  line-height: 1.2;
+}
+
+.modal-title:hover h2 {
+  transform: translateX(3px);
+  letter-spacing: .1px;
+  text-shadow: 0 5px 18px rgba(79,70,229,.13);
+}
+
+.modal-title p {
+  color: #64748b !important;
+  font-weight: 600;
+}
+
+/* Small gradient accent underneath the project heading */
+.modal-title::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: 0;
+  width: 76px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #a855f7,
+    #ec4899
+  );
+  box-shadow: 0 4px 12px rgba(99,102,241,.22);
+}
+
+/* Make the PROJECT RISK ASSESSMENT eyebrow stand out */
+.modal-title span {
+  display: inline-block;
+  color: #4f46e5 !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.35px !important;
+  text-transform: uppercase;
+  transition:
+    transform .2s ease,
+    letter-spacing .2s ease;
+}
+
+.modal-title:hover span {
+  transform: translateX(2px);
+  letter-spacing: 1.5px !important;
+}
+
+/* Premium risk-summary card */
+.risk-summary {
+  position: relative;
+  overflow: hidden;
+}
+
+.risk-summary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      110deg,
+      transparent 0%,
+      rgba(255,255,255,.55) 45%,
+      transparent 70%
+    );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.risk-summary:hover::before {
+  animation: riskSummaryShine .8s ease;
+}
+
+@keyframes riskSummaryShine {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
+/* Give risk level a stronger pill presence */
+.risk-summary .risk-badge {
+  min-width: 62px;
+  text-align: center;
+  font-weight: 850;
+  box-shadow: 0 5px 14px rgba(30,40,80,.07);
+}
+
+/* Project detail cards get a subtle top highlight */
+.detail-grid > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-grid > div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #a855f7,
+    #ec4899
+  );
+  transition: opacity .2s ease;
+}
+
+.detail-grid > div:hover::before {
+  opacity: 1;
+}
+
+/* Add depth to the whole modal */
+.modal {
+  animation: premiumModalEnter .32s cubic-bezier(.2,.75,.2,1) both;
+}
+
+@keyframes premiumModalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.975);
+    box-shadow: 0 8px 20px rgba(30,40,80,.05);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Close button */
+.close-button {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg) scale(1.06);
+  box-shadow: 0 7px 18px rgba(30,40,80,.10);
+}
+
+/* Stronger action-button hover */
+.verification-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.verification-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -90%;
+  width: 45%;
+  height: 100%;
+  transform: skewX(-20deg);
+  background: rgba(255,255,255,.22);
+  pointer-events: none;
+}
+
+.verification-button:hover::after {
+  animation: buttonShine .65s ease;
+}
+
+@keyframes buttonShine {
+  from {
+    left: -90%;
+  }
+  to {
+    left: 135%;
+  }
+}
+
+/* Investigation workspace cards */
+.investigation-card,
+.investigation-project,
+.investigation-task,
+.investigation-item {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.investigation-card:hover,
+.investigation-project:hover,
+.investigation-task:hover,
+.investigation-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(30,40,80,.09);
+}
+
+/* Smooth page section headings */
+.section-title,
+.page-title,
+.page-heading {
+  transition:
+    transform .2s ease,
+    text-shadow .2s ease;
+}
+
+/* More refined hover for chart/panel notes */
+.chart-note {
+  transition:
+    transform .2s ease,
+    background-color .2s ease;
+}
+
+.chart-note:hover {
+  transform: translateY(-1px);
+}
+
+/* Accessibility: disable decorative motion when requested */
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .modal-title h2,
+  .risk-summary::before,
+  .verification-button::after {
+    animation: none !important;
+  }
+
+  .modal-title:hover h2,
+  .detail-grid > div:hover,
+  .investigation-card:hover,
+  .investigation-project:hover,
+  .investigation-task:hover,
+  .investigation-item:hover {
+    transform: none !important;
+  }
+}
+

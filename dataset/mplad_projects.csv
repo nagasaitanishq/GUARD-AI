@@ -1,0 +1,21 @@
+project_id,project_name,state,district,constituency,category,sanctioned_amount,estimated_cost,actual_expenditure,amount_released,amount_utilized,start_date,expected_completion_date,actual_completion_date,vendor,status
+MPLAD001,Government School Renovation,Telangana,Hyderabad,HYD001,Education,1000000,950000,920000,950000,920000,2025-01-10,2025-04-10,2025-04-05,ABC Constructions,Completed
+MPLAD002,Rural Road Development,Telangana,Warangal,WGL001,Roads,1500000,1450000,1480000,1450000,1480000,2025-02-01,2025-06-01,2025-06-10,XYZ Infra,Completed
+MPLAD003,Community Health Center,Andhra Pradesh,Guntur,GNT001,Health,2000000,1950000,1980000,1950000,1980000,2025-01-15,2025-07-15,2025-07-20,HealthBuild Pvt Ltd,Completed
+MPLAD004,Street Lighting Project,Karnataka,Bengaluru,BLR001,Infrastructure,800000,780000,790000,780000,790000,2025-03-01,2025-05-01,2025-05-05,LightTech,Completed
+MPLAD005,Drinking Water Facility,Telangana,Nalgonda,NLG001,Water,1200000,1150000,1160000,1150000,1160000,2025-02-10,2025-06-10,2025-06-15,WaterWorks,Completed
+MPLAD006,School Computer Lab,Kerala,Kochi,KOC001,Education,900000,880000,870000,880000,870000,2025-01-20,2025-04-20,2025-04-18,TechBuild,Completed
+MPLAD007,Village Road Repair,Maharashtra,Pune,PUN001,Roads,1300000,1250000,1280000,1250000,1280000,2025-02-05,2025-06-05,2025-06-08,Metro Infra,Completed
+MPLAD008,Primary Health Center Upgrade,Tamil Nadu,Madurai,MDU001,Health,1800000,1750000,1780000,1750000,1780000,2025-01-05,2025-07-05,2025-07-10,MedBuild,Completed
+MPLAD009,Public Library Construction,Telangana,Karimnagar,KMN001,Education,1100000,1080000,1070000,1080000,1070000,2025-03-05,2025-08-05,2025-08-02,ABC Constructions,Completed
+MPLAD010,Drainage Improvement,Andhra Pradesh,Vijayawada,VJA001,Infrastructure,1400000,1350000,1390000,1350000,1390000,2025-02-15,2025-06-15,2025-06-20,UrbanWorks,Completed
+MPLAD011,Road Widening Project,Telangana,Hyderabad,HYD002,Roads,1200000,1150000,2900000,1150000,900000,2025-01-10,2025-05-10,2025-11-30,XYZ Infra,Delayed
+MPLAD012,School Building Extension,Andhra Pradesh,Guntur,GNT002,Education,1600000,1550000,3200000,1550000,1100000,2025-02-01,2025-07-01,2025-12-20,XYZ Infra,Delayed
+MPLAD013,Water Pipeline Project,Karnataka,Mysuru,MYS001,Water,1000000,980000,1010000,980000,120000,2025-03-01,2025-06-01,,WaterWorks,Ongoing
+MPLAD014,Community Hall Construction,Telangana,Warangal,WGL002,Infrastructure,900000,850000,2100000,850000,800000,2025-01-15,2025-05-15,2025-10-30,ABC Constructions,Delayed
+MPLAD015,Rural Health Center,Kerala,Kochi,KOC002,Health,1700000,1650000,1750000,1650000,300000,2025-02-10,2025-08-10,,MedBuild,Ongoing
+MPLAD016,Street Road Repair,Maharashtra,Pune,PUN002,Roads,1000000,950000,1020000,950000,950000,2025-03-10,2025-06-10,2025-06-12,Metro Infra,Completed
+MPLAD017,School Furniture Supply,Tamil Nadu,Madurai,MDU002,Education,700000,680000,690000,680000,690000,2025-02-20,2025-04-20,2025-04-22,TechBuild,Completed
+MPLAD018,Drainage Construction,Telangana,Nalgonda,NLG002,Infrastructure,1250000,1200000,1270000,1200000,1270000,2025-01-25,2025-06-25,2025-06-28,UrbanWorks,Completed
+MPLAD019,Water Tank Construction,Andhra Pradesh,Vijayawada,VJA002,Water,1000000,980000,980000,980000,980000,2025-03-01,2025-07-01,2025-07-05,WaterWorks,Completed
+MPLAD020,Government School Repair,Telangana,Karimnagar,KMN002,Education,950000,900000,920000,900000,920000,2025-02-01,2025-05-01,2025-05-04,ABC Constructions,Completed

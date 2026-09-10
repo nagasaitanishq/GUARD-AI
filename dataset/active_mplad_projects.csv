@@ -1,0 +1,11 @@
+project_id,project_name,state,district,constituency,category,sanctioned_amount,estimated_cost,actual_expenditure,amount_released,amount_utilized,start_date,expected_completion_date,actual_completion_date,vendor,status
+MPLAD001,Community Library,Telangana,Hyderabad,Hyderabad,Education,1200000,1150000,2900000,1100000,1030000,2025-01-10,2025-07-10,2026-01-20,ABC Constructions,Completed
+MPLAD002,Village Road Improvement,Telangana,Warangal,Warangal,Roads,1800000,1750000,1680000,1700000,350000,2025-02-01,2025-08-01,2025-07-28,Rural Infra Ltd,Completed
+MPLAD003,Primary Health Facility,Andhra Pradesh,Guntur,Guntur,Health,2200000,2100000,3400000,2000000,1900000,2025-01-20,2025-09-20,2026-02-15,HealthBuild Pvt Ltd,Completed
+MPLAD004,Drinking Water System,Karnataka,Mysuru,Mysuru,Water,1500000,1450000,1380000,1400000,1320000,2025-03-01,2025-09-01,2025-08-25,AquaWorks,Completed
+MPLAD005,School Renovation,Tamil Nadu,Coimbatore,Coimbatore,Education,1600000,1550000,1490000,1500000,400000,2025-02-15,2025-08-15,2025-08-08,ABC Constructions,Completed
+MPLAD006,Community Centre,Kerala,Kochi,Kochi,Community,2000000,1950000,1870000,1900000,1800000,2025-01-05,2025-08-05,2025-07-30,MegaInfra Solutions,Completed
+MPLAD007,Street Lighting,Telangana,Nizamabad,Nizamabad,Infrastructure,900000,880000,820000,850000,790000,2025-03-10,2025-07-10,2025-07-05,MegaInfra Solutions,Completed
+MPLAD008,Bus Shelter,Andhra Pradesh,Vijayawada,Vijayawada,Transport,700000,680000,640000,650000,610000,2025-04-01,2025-08-01,2025-07-25,MegaInfra Solutions,Completed
+MPLAD007,Public Park Development,Karnataka,Hubballi,Hubballi,Community,1100000,1080000,1010000,1050000,980000,2025-02-20,2025-08-20,2025-08-12,GreenBuild,Completed
+MPLAD010,Computer Lab,Tamil Nadu,Madurai,Madurai,Education,1300000,1250000,1180000,1200000,1140000,2025-01-25,2025-07-25,2025-07-18,TechServe,Completed
