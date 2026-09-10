@@ -15,7 +15,7 @@ import {
 } from "recharts";
 import "./App.css";
 
-const API_URL = "/api";
+const API_URL = "https://guard-ai-backend.onrender.com";
 
 // Each browser must upload its own dataset before seeing the dashboard.
 const FIRST_USE_KEY = "guard_ai_first_use_complete";
